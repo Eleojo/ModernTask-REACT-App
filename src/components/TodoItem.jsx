@@ -8,7 +8,7 @@ export default function TodoItem({ index, todos, setTodos }) {
   function handleClick(index) {
     let updatedTodos = [...todos];
     updatedTodos[index].done = !updatedTodos[index].done; //update done property
-    setTodos(updatedTodos);
+    setTodos(updatedTodos.sort((a, b) => Number(a.done) - Number(b.done)));
   }
   return (
     <div className={styles.todoItem}>
